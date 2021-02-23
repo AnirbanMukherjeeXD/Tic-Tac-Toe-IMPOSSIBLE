@@ -77,14 +77,22 @@ var output = document.querySelector('.output');
 
 var maxX = garden.clientWidth  - ball.clientWidth;
 var maxY = garden.clientHeight - ball.clientHeight;
-
+function modl(x){
+    y=x+2;
+    return(y);
+}
 function handleOrientation(event) {
     
     var d = new Date();
   var n = d.getTime();
   document.getElementById('prev').innerHTML+= n+"<br>"; 
-  var x = event.beta;  // In degree in the range [-180,180)
+    var x = event.beta;  // In degree in the range [-180,180)
   var y = event.gamma; // In degree in the range [-90,90)
+    modl(x+y);
+    var d = new Date();
+  var n = d.getTime();
+  document.getElementById('prev').innerHTML+= n+"<br><hr><br>"; 
+  
 
   output.textContent  = `beta : ${x}\n`;
   output.textContent += `gamma: ${y}\n`;
