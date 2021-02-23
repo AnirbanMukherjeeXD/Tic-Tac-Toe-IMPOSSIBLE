@@ -64,6 +64,7 @@
             <div class="garden">
   <div class="ball"></div>
 </div>
+        <div id="prev"></div>
 
 <pre class="output"></pre>
 
@@ -78,6 +79,10 @@ var maxX = garden.clientWidth  - ball.clientWidth;
 var maxY = garden.clientHeight - ball.clientHeight;
 
 function handleOrientation(event) {
+    
+    var d = new Date();
+  var n = d.getTime();
+  document.getElementById('prev').innerHTML+= n+"<br>"; 
   var x = event.beta;  // In degree in the range [-180,180)
   var y = event.gamma; // In degree in the range [-90,90)
 
